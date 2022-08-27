@@ -7,7 +7,8 @@
     "format:check": "prettier -c src",
     "check-types": "tsc --noEmit",
     "lint:check": "eslint src",
-    "lint:fix": "eslint src --fix"
+    "lint:fix": "eslint src --fix",
+    "check-all": "yarn format:check && yarn lint:check && yarn check-types"
   },
   "devDependencies": {
     "@types/node": "^18.7.13",
