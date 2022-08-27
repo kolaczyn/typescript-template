@@ -1,7 +1,9 @@
 {
   "license": "MIT",
   "scripts": {
-    "start": "ts-node src/index.ts"
+    "start": "ts-node src/index.ts",
+    "format:fix": "prettier -w src",
+    "format:check": "prettier -c src"
   },
   "devDependencies": {
     "@types/node": "^18.7.13",
