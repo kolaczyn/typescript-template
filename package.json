@@ -9,6 +9,7 @@
     "lint:check": "eslint src",
     "lint:fix": "eslint src --fix",
     "test": "jest",
+    "test:watch": "jest --watch",
     "check-all": "yarn format:check && yarn lint:check && yarn check-types && yarn test"
   },
   "engines": {
