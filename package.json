@@ -3,7 +3,7 @@
   "license": "MIT",
   "author": "Paweł Kołaczyński",
   "repository": "github:kolaczyn/typescript-template",
-  "version": "2.0.1",
+  "version": "2.0.3",
   "scripts": {
     "dev": "ts-node src/index.ts",
     "dev:watch": "ts-node-dev src/index.ts",
@@ -47,7 +47,7 @@
   ],
   "main": "./lib/cjs/index.js",
   "module": "./lib/umd/index.js",
-  "types": "/lib/index.d.ts",
+  "types": "./lib/index.d.ts",
   "exports": {
     ".": {
       "import": "./lib/esm/index.js",
