@@ -1,3 +1,6 @@
-import { greeter } from './greeter'
+// package setup
+export { greeter } from './greeter'
 
-console.log(greeter('world'))
+// binary setup
+// import { greeter } from './greeter'
+// greeter('hello world')
