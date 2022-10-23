@@ -1,22 +1,28 @@
 {
+  "name": "kolaczyn-typescript-template",
   "license": "MIT",
-  "version": "1.0.0",
+  "author": "Paweł Kołaczyński",
+  "repository": "github:kolaczyn/typescript-template",
+  "version": "2.0.6",
   "scripts": {
-    "start": "ts-node src/index.ts",
-    "start:watch": "ts-node-dev src/index.ts",
+    "dev": "ts-node src/index.ts",
+    "dev:watch": "ts-node-dev src/index.ts",
     "build": "rimraf dist && tsc",
+    "start": "node dist/index.js",
     "format:fix": "prettier -w src",
     "format:check": "prettier -c src",
-    "check-types": "tsc --noEmit",
+    "types:check": "tsc --noEmit",
     "lint:check": "eslint src",
     "lint:fix": "eslint src --fix",
     "test": "jest",
     "test:watch": "jest --watch",
-    "check-all": "yarn format:check && yarn lint:check && yarn check-types && yarn test"
+    "check-all": "yarn format:check && yarn lint:check && yarn check-types && yarn test",
+    "build:package": "rimraf lib && yarn build:esm && yarn build:umd && yarn build:commonjs",
+    "build:esm": "tsc --module esnext --outDir lib/esm",
+    "build:umd": "tsc --module umd --outDir lib/umd",
+    "build:commonjs": "tsc --module commonjs --outDir lib/cjs"
   },
-  "engines": {
-    "node": "^18.7.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/jest": "^29.2.0",
     "@types/node": "^18.11.3",
@@ -32,5 +38,20 @@
     "ts-node-dev": "^2.0.0",
     "typescript": "4.8.4"
   },
-  "dependencies": {}
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/umd/index.js",
+  "types": "./lib/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/esm/index.js",
+      "require": "./lib/umd/index.js"
+    }
+  },
+  "sideEffects": false
 }
