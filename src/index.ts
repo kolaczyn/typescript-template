@@ -1,7 +1,11 @@
-// package setup
+// --- begin package setup ---
 export { greeter } from './greeter'
-
 export const addTwoNumbers = (a: number, b: number) => a + b
-// binary setup
+// --- end package setup --
+
+// --- begin binsetup ---
+
 // import { greeter } from './greeter'
-// greeter('hello world')
+// console.log(greeter('world'))
+
+// --- end binsetup
