@@ -3,7 +3,7 @@
   "license": "MIT",
   "author": "Paweł Kołaczyński",
   "repository": "github:kolaczyn/typescript-template",
-  "version": "2.0.6",
+  "version": "2.0.0",
   "scripts": {
     "dev": "ts-node src/index.ts",
     "dev:watch": "ts-node-dev src/index.ts",
