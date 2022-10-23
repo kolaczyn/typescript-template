@@ -16,7 +16,12 @@
     "lint:fix": "eslint src --fix",
     "test": "jest",
     "test:watch": "jest --watch",
-    "check-all": "yarn format:check && yarn lint:check && yarn check-types && yarn test"
+    "check-all": "yarn format:check && yarn lint:check && yarn check-types && yarn test",
+    "build:package": "rimraf lib && yarn build:esm && yarn build:umd && yarn build:commonjs && yarn build:declarations",
+    "build:esm": "tsc --module esnext --declarationMap false --outDir lib/esm",
+    "build:umd": "tsc --module umd --declarationMap false --outDir lib/umd",
+    "build:commonjs": "tsc --module commonjs --declarationMap false --outDir lib/cjs",
+    "build:declarations": "tsc --declaration true --emitDeclarationOnly --outFile lib/index.d.ts"
   },
   "dependencies": {},
   "devDependencies": {
@@ -35,7 +40,19 @@
     "typescript": "4.8.4"
   },
   "engines": {
-    "node": "^18.7.0"
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/umd/index.js",
+  "types": "/lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/esm/index.js",
+      "require": "./lib/umd/index.js"
+    }
   },
   "sideEffects": false
 }
