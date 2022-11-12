@@ -6,6 +6,9 @@
     "@typescript-eslint/no-unused-vars": "off",
     "semi": "off",
     "sort-imports": "error",
-    "no-unused-vars": "error"
+    "no-unused-vars": "error",
+    "no-console": "error",
+    "camelcase": "error",
+    "no-magic-numbers": "error"
   }
 }
