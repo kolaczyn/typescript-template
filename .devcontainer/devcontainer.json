@@ -1,12 +1,8 @@
+// See https://containers.dev/implementors/json_reference/ for configuration reference
 {
-  "name": "Node.js",
-  "build": {
-    "dockerfile": "Dockerfile",
-    "args": { "VARIANT": "18-bullseye" }
-  },
-  "customizations": {
-    "vscode": {
-      "extensions": ["dbaeumer.vscode-eslint"]
-    }
-  }
+	"name": "TypeScript Template",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"remoteUser": "root"
 }
