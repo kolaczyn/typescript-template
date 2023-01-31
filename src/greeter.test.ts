@@ -5,6 +5,5 @@ test('greets hello world', () => {
 })
 
 test('greet Paweł', () => {
-  const lol = 21
   expect(greeter('Paweł')).toBe('Hello Paweł!')
 })
