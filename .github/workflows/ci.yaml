@@ -11,28 +11,24 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: ['18']
     name: Format, Lint, Check Types, test
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
+      - uses: pnpm/action-setup@v2
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 18
       - run: yarn install
       - run: yarn ci
 
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: ['18']
     name: Build
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
+      - uses: pnpm/action-setup@v2
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 18
       - run: yarn install
       - run: yarn build
