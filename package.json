@@ -12,8 +12,8 @@
     "types": "tsc --noEmit",
     "lint:check": "eslint src",
     "lint:fix": "eslint src --fix",
-    "test": "jest --watch",
-    "test:run": "jest",
+    "test": "vitest",
+    "test:run": "vitest run",
     "ci": "run-p -l --aggregate-output format lint:check types test:run",
     "build": "rimraf dist && tsc",
     "build:package": "rimraf lib && yarn build:esm",
@@ -37,7 +37,9 @@
     "rimraf": "^4.1.2",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
-    "typescript": "4.9.5"
+    "typescript": "4.9.5",
+    "vite": "^4.1.2",
+    "vitest": "^0.28.5"
   },
   "engines": {
     "node": ">=18.0.0"
