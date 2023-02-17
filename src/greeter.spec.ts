@@ -1,3 +1,4 @@
+import { test, expect } from 'vitest'
 import { greeter } from './greeter'
 
 test('greets hello world', () => {

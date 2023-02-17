@@ -9,8 +9,7 @@ I created the repo, because I got tired of writing writing the same code every f
 - TypeScript setup (with ts-node)
 - Prettier config
 - eslint config
-- Jest
-  - with TS support
+- testing with Vitest
 - VS Code setup
   - devcontainers
   - debugger
