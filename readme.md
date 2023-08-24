@@ -21,8 +21,3 @@ I created the repo, because I got tired of writing writing the same code every f
 
 - Supports Node.js v18 and up.
 - If you don't intend to use it as a base of package, you should remove scripts from `package.json` that begin with `build:*`
-
-## TODO
-
-- add path aliases
-- preconfigure for making packages
